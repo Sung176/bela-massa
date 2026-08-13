@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bela Massa | Salgados</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff8ed;
+    color:#291713;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,input,textarea,select{
+    font-family:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,248,237,.97);
+    border-bottom:1px solid #eaded2;
+}
+
+.nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:900;
+    color:#b92820;
+}
+
+.logo span{
+    color:#f28b20;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#b92820;
+}
+
+.btn{
+    border:none;
+    border-radius:14px;
+    padding:13px 20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#b92820;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#921e18;
+    transform:translateY(-2px);
+}
+
+.btn-light{
+    background:white;
+    color:#b92820;
+    border:1px solid #ead8cb;
+}
+
+.btn-green{
+    background:#20a957;
+    color:white;
+}
+
+.hero{
+    padding:80px 0;
+    background:linear-gradient(135deg,#fff8ed,#ffe4bd);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:55px;
+}
+
+.eyebrow{
+    color:#b92820;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,75px);
+    line-height:1;
+    margin:15px 0;
+}
+
+.hero h1 span{
+    color:#b92820;
+}
+
+.hero p{
+    color:#76645d;
+    font-size:18px;
+    max-width:600px;
+}
+
+.actions{
+    display:flex;
+    gap:12px;
+    margin-top:27px;
+    flex-wrap:wrap;
+}
+
+.hero-img{
+    min-height:400px;
+    border-radius:35px;
+    background:linear-gradient(135deg,#d9552e,#ffbd48);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    box-shadow:0 15px 35px rgba(60,30,15,.15);
+}
+
+section{
+    padding:75px 0;
+}
+
+.section-head{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-head h2{
+    font-size:36px;
+    margin-top:8px;
+}
+
+.section-head p{
+    color:#76645d;
+    margin-top:8px;
+}
+
+.toolbar{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.chips{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.chip{
+    border:1px solid #e5d2c3;
+    background:white;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.chip.active,
+.chip:hover{
+    background:#b92820;
+    color:white;
+}
+
+.search{
+    padding:13px 15px;
+    border-radius:14px;
+    border:1px solid #e4d3c6;
+    outline:none;
+    min-width:260px;
+    font-size:15px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid #eee0d6;
+    box-shadow:0 7px 20px rgba(60,30,15,.07);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.food-img{
+    height:180px;
+    background:linear-gradient(135deg,#ffe4ad,#fff3dc);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card h3{
+    font-size:20px;
+}
+
+.desc{
+    color:#76645d;
+    font-size:14px;
+    margin:7px 0 15px;
+}
+
+.price{
+    font-size:21px;
+    color:#b92820;
+    font-weight:bold;
+    margin-bottom:13px;
+}
+
+.card .btn{
+    width:100%;
+}
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-box{
+    background:linear-gradient(135deg,#b92820,#e85e24);
+    color:white;
+    border-radius:28px;
+    padding:50px;
+    min-height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.about-box strong{
+    font-size:70px;
+}
+
+.about h2{
+    font-size:36px;
+    margin:12px 0;
+}
+
+.about p{
+    color:#76645d;
+    font-size:17px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.feature{
+    background:#fff8ed;
+    padding:18px;
+    border-radius:15px;
+    font-weight:bold;
+}
+
+.feature small{
+    display:block;
+    color:#76645d;
+    margin-top:5px;
+    font-weight:normal;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-card{
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    border:1px solid #eee0d6;
+}
+
+.contact-card h3{
+    margin-bottom:15px;
+}
+
+.contact-item{
+    padding:12px 0;
+    border-bottom:1px solid #eee5df;
+}
+
+footer{
+    background:#291713;
+    color:white;
+    padding:35px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer p{
+    color:#d7c7c0;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#20a957;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    z-index:1000;
+}
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:2000;
+}
+
+.drawer{
+    position:absolute;
+    right:0;
+    top:0;
+    height:100%;
+    width:min(460px,94%);
+    background:white;
+    padding:25px;
+    overflow-y:auto;
+}
+
+.drawer-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.close{
+    background:none;
+    border:none;
+    font-size:32px;
+    cursor:pointer;
+}
+
+.cart-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:10px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.qty{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.qty button{
+    width:30px;
+    height:30px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.total{
+    font-size:22px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.form{
+    display:grid;
+    gap:10px;
+    margin-top:15px;
+}
+
+.form input,
+.form textarea,
+.form select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+.form label{
+    font-weight:bold;
+    font-size:14px;
+}
+
+.empty{
+    text-align:center;
+    color:#76645d;
+    padding:40px 0;
+}
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .hero-img{
+        min-height:280px;
+    }
+}
+
+@media(max-width:520px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .hero{
+        padding:55px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<a href="#inicio" class="logo">
+Bela <span>Massa</span> 🥟
+</a>
+
+<nav>
+<a href="#inicio">Início</a>
+<a href="#cardapio">Cardápio</a>
+<a href="#sobre">Sobre</a>
+<a href="#contato">Contato</a>
+</nav>
+
+<button class="btn btn-primary" onclick="openCart()">
+🛒 Carrinho <span id="count">0</span>
+</button>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="inicio">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+Salgados artesanais • Feitos com carinho
+</div>
+
+<h1>
+Sabor que conquista em
+<span>cada mordida!</span>
+</h1>
+
+<p>
+Salgados fresquinhos, deliciosos e preparados com carinho para deixar seu dia muito mais gostoso.
+</p>
+
+<div class="actions">
+
+<a href="#cardapio" class="btn btn-primary">
+Ver Cardápio
+</a>
+
+<button class="btn btn-light" onclick="fazerPedido()">
+Fazer Pedido →
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-img">
+🥟 🍗 🧀 🥟
+</div>
+
+</div>
+
+</section>
+
+
+<section id="cardapio">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Nosso cardápio
+</div>
+
+<h2>
+Escolha seus favoritos 😋
+</h2>
+
+<p>
+Salgados fresquinhos preparados todos os dias.
+</p>
+
+</div>
+
+
+<div class="toolbar">
+
+<div class="chips">
+
+<button class="chip active" data-cat="Todos">
+Todos
+</button>
+
+<button class="chip" data-cat="Salgados">
+Salgados
+</button>
+
+<button class="chip" data-cat="Pacotes">
+Pacotes
+</button>
+
+</div>
+
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔎 Buscar salgado..."
+oninput="renderProducts()"
+>
+
+</div>
+
+
+<div class="products" id="products"></div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="sobre">
+
+<div class="container about-grid">
+
+<div class="about-box">
+
+<strong>🥟</strong>
+
+<h3>Bela Massa</h3>
+
+<p style="color:white;">
+Sabor, carinho e qualidade em cada salgado.
+</p>
+
+</div>
+
+
+<div>
+
+<div class="eyebrow">
+Sobre nós
+</div>
+
+<h2>
+Feito para você voltar sempre.
+</h2>
+
+<p>
+Na Bela Massa, cada salgado é preparado com ingredientes selecionados e muito carinho.
+Nosso objetivo é oferecer produtos saborosos, fresquinhos e de qualidade para tornar cada momento ainda mais especial.
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+✨ Qualidade
+<small>Ingredientes selecionados</small>
+</div>
+
+<div class="feature">
+🔥 Fresquinho
+<small>Produção diária</small>
+</div>
+
+<div class="feature">
+❤️ Carinho
+<small>Feito pensando em você</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contato">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Fale com a gente
+</div>
+
+<h2>
+Contato & informações
+</h2>
+
+</div>
+
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>
+📍 Onde estamos
+</h3>
+
+<div class="contact-item">
+📍 Rua da Bela Massa, 100 — Centro
+</div>
+
+<div class="contact-item">
+🕐 Segunda a sábado: 10h às 22h
+</div>
+
+<div class="contact-item">
+📱 WhatsApp: (11) 99914-1324
+</div>
+
+<div class="contact-item">
+📸 Instagram: @belamassa
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+🤖 Atendimento Bela Massa
+</h3>
+
+<p style="color:#76645d;margin-bottom:16px;">
+Faça seu pedido pelo WhatsApp e receba atendimento da Bela Massa.
+</p>
+
+<button class="btn btn-green" onclick="abrirWhatsApp()">
+💬 Falar no WhatsApp
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<a
+href="#"
+class="whatsapp"
+onclick="abrirWhatsApp();return false;"
+>
+☏
+</a>
+
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<b>🥟 Bela Massa</b>
+
+<p>
+Sabor que conquista em cada mordida!
+</p>
+
+</div>
+
+<div>
+
+<p>
+© 2026 Bela Massa. Todos os direitos reservados.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<div
+class="overlay"
+id="overlay"
+onclick="fecharSeClicarFora(event)"
+>
+
+<aside class="drawer">
+
+<div class="drawer-head">
+
+<h2>
+Seu pedido 🛒
+</h2>
+
+<button
+class="close"
+onclick="closeCart()"
+>
+×
+</button>
+
+</div>
+
+<div id="cart"></div>
+
+<div id="checkout"></div>
+
+</aside>
+
+</div>
+
+
+<script>
+
+const WHATSAPP = "5511999141324";
+
+
+const products = [
+
+{
+name:"Coxinha",
+cat:"Salgados",
+price:7,
+emoji:"🍗",
+desc:"Massa crocante e recheio cremoso de frango."
+},
+
+{
+name:"Bolinha de queijo",
+cat:"Salgados",
+price:6,
+emoji:"🧀",
+desc:"Queijo derretido em uma massa douradinha."
+},
+
+{
+name:"Risole",
+cat:"Salgados",
+price:6.5,
+emoji:"🥟",
+desc:"Recheio cremoso e massa leve e crocante."
+},
+
+{
+name:"Enroladinho de queijo e presunto",
+cat:"Salgados",
+price:7,
+emoji:"🌭",
+desc:"Presunto e queijo em massa macia."
+},
+
+{
+name:"Kibe",
+cat:"Salgados",
+price:6.5,
+emoji:"🥙",
+desc:"Kibe crocante e bem temperado."
+},
+
+{
+name:"Pastel",
+cat:"Salgados",
+price:8,
+emoji:"🥟",
+desc:"Pastel sequinho com recheio delicioso."
+},
+
+{
+name:"Pacote de Coxinha",
+cat:"Pacotes",
+price:10,
+emoji:"🍗",
+desc:"Pacote com coxinhas. R$ 10,00 o pacote."
+},
+
+{
+name:"Pacote de Bolinho de Queijo",
+cat:"Pacotes",
+price:10,
+emoji:"🧀",
+desc:"Pacote com bolinhos de queijo. R$ 10,00 o pacote."
+}
+
+];
+
+
+let cart =
+JSON.parse(localStorage.getItem("belaMassaCart")) || {};
+
+let category = "Todos";
+
+
+function money(value){
+
+return value.toLocaleString(
+"pt-BR",
+{
+style:"currency",
+currency:"BRL"
+}
+);
+
+}
+
+
+function renderProducts(){
+
+const search =
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+const list =
+products.filter(
+p =>
+(category === "Todos" || p.cat === category)
+&&
+p.name.toLowerCase().includes(search)
+);
+
+
+document.getElementById("products").innerHTML =
+
+list.map(p => {
+
+const i = products.indexOf(p);
+
+return `
+
+<article class="card">
+
+<div class="food-img">
+${p.emoji}
+</div>
+
+<div class="card-body">
+
+<h3>
+${p.name}
+</h3>
+
+<div class="desc">
+${p.desc}
+</div>
+
+<div class="price">
+${money(p.price)}
+</div>
+
+<button
+class="btn btn-primary"
+onclick="add(${i})"
+>
+🛒 Adicionar ao pedido
+</button>
+
+</div>
+
+</article>
+
+`;
+
+}).join("");
+
+}
+
+
+document
+.querySelectorAll(".chip")
+.forEach(button => {
+
+button.onclick = () => {
+
+category = button.dataset.cat;
+
+document
+.querySelectorAll(".chip")
+.forEach(x =>
+x.classList.remove("active")
+);
+
+button.classList.add("active");
+
+renderProducts();
+
+};
+
+});
+
+
+function save(){
+
+localStorage.setItem(
+"belaMassaCart",
+JSON.stringify(cart)
+);
+
+updateCount();
+
+}
+
+
+function add(i){
+
+cart[i] =
+(cart[i] || 0) + 1;
+
+save();
+
+openCart();
+
+}
+
+
+function change(i,amount){
+
+cart[i] =
+(cart[i] || 0) + amount;
+
+if(cart[i] <= 0){
+
+delete cart[i];
+
+}
+
+save();
+
+renderCart();
+
+}
+
+
+function updateCount(){
+
+document.getElementById("count")
+.textContent =
+Object.values(cart)
+.reduce((a,b) => a+b,0);
+
+}
+
+
+function fazerPedido(){
+
+document.getElementById("overlay")
+.style.display = "block";
+
+renderCart();
+
+}
+
+
+function openCart(){
+
+document.getElementById("overlay")
+.style.display = "block";
+
+renderCart();
+
+}
+
+
+function closeCart(){
+
+document.getElementById("overlay")
+.style.display = "none";
+
+}
+
+
+function irParaCardapio(){
+
+closeCart();
+
+document
+.getElementById("cardapio")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function fecharSeClicarFora(event){
+
+if(event.target.id === "overlay"){
+
+closeCart();
+
+}
+
+}
+
+
+function renderCart(){
+
+const entries =
+Object.entries(cart);
+
+
+if(!entries.length){
+
+document.getElementById("cart").innerHTML = `
+
+<div class="empty">
+
+Seu carrinho está vazio. 🛒
+
+<br><br>
+
+Escolha um salgado para começar seu pedido.
+
+<br><br>
+
+<button
+class="btn btn-primary"
+onclick="irParaCardapio()"
+>
+Ver cardápio
+</button>
+
+</div>
+
+`;
+
+document.getElementById("checkout")
+.innerHTML = "";
+
+return;
+
+}
+
+
+let total = 0;
+
+
+document.getElementById("cart").innerHTML =
+
+entries.map(([i,q]) => {
+
+const p = products[i];
+
+total += p.price * q;
+
+return `
+
+<div class="cart-row">
+
+<div>
+
+<b>
+${p.name}
+</b>
+
+<br>
+
+<small>
+${money(p.price)} cada
+</small>
+
+</div>
+
+<div class="qty">
+
+<button onclick="change(${i},-1)">
+−
+</button>
+
+<b>
+${q}
+</b>
+
+<button onclick="change(${i},1)">
++
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("")
+
+
++
+
+`
+
+<div class="total">
+Total: ${money(total)}
+</div>
+
+`;
+
+
+document.getElementById("checkout")
+.innerHTML = `
+
+<h3>
+Finalizar pedido
+</h3>
+
+<div class="form">
+
+<label>
+Nome
+</label>
+
+<input
+id="name"
+placeholder="Digite seu nome"
+>
+
+
+<label>
+Telefone
+</label>
+
+<input
+id="phone"
+placeholder="(11) 99999-9999"
+>
+
+
+<label>
+Tipo de pedido
+</label>
+
+<select id="delivery">
+
+<option value="">
+Escolha uma opção
+</option>
+
+<option value="Entrega">
+🚚 Entrega
+</option>
+
+<option value="Retirada">
+🏪 Retirada na loja
+</option>
+
+</select>
+
+
+<label>
+Endereço
+</label>
+
+<input
+id="address"
+placeholder="Endereço para entrega"
+>
+
+
+<label>
+Forma de pagamento
+</label>
+
+<select id="payment">
+
+<option value="">
+Escolha o pagamento
+</option>
+
+<option value="Pix">
+Pix
+</option>
+
+<option value="Dinheiro">
+Dinheiro
+</option>
+
+<option value="Cartão">
+Cartão
+</option>
+
+</select>
+
+
+<label>
+Observações
+</label>
+
+<textarea
+id="obs"
+rows="3"
+placeholder="Ex: sem cebola..."
+></textarea>
+
+
+<button
+class="btn btn-green"
+onclick="sendOrder()"
+>
+💬 Enviar pedido pelo WhatsApp
+</button>
+
+</div>
+
+`;
+
+}
+
+
+function abrirWhatsApp(){
+
+const msg =
+"Olá! 👋 Seja bem-vindo à Bela Massa! 🥟\n\n"
++
+"Como podemos ajudar?\n\n"
++
+"1️⃣ Fazer um pedido\n"
++
+"2️⃣ Ver o cardápio\n"
++
+"3️⃣ Falar com atendente";
+
+
+window.open(
+"https://wa.me/"
++
+WHATSAPP
++
+"?text="
++
+encodeURIComponent(msg),
+"_blank"
+);
+
+}
+
+
+function sendOrder(){
+
+const name =
+document.getElementById("name")
+.value.trim();
+
+const phone =
+document.getElementById("phone")
+.value.trim();
+
+const delivery =
+document.getElementById("delivery")
+.value;
+
+const address =
+document.getElementById("address")
+.value.trim();
+
+const payment =
+document.getElementById("payment")
+.value;
+
+const obs =
+document.getElementById("obs")
+.value.trim();
+
+
+if(
+!name ||
+!phone ||
+!delivery ||
+!payment
+){
+
+alert(
+"Preencha nome, telefone, tipo de pedido e pagamento."
+);
+
+return;
+
+}
+
+
+if(
+delivery === "Entrega"
+&&
+!address
+){
+
+alert(
+"Digite o endereço para entrega."
+);
+
+return;
+
+}
+
+
+let total = 0;
+
+
+const lines =
+
+Object
+.entries(cart)
+.map(([i,q]) => {
+
+const p = products[i];
+
+total += p.price * q;
+
+return `
+• ${q}x ${p.name} — ${money(p.price*q)}
+`;
+
+})
+.join("\n");
+
+
+const endereco =
+delivery === "Entrega"
+?
+address
+:
+"Retirada na loja";
+
+
+const msg =
+
+`🥟 *NOVO PEDIDO — BELA MASSA*
+
+Olá! Gostaria de fazer um pedido.
+
+👤 *Cliente:*
+${name}
+
+📱 *Telefone:*
+${phone}
+
+📦 *Tipo:*
+${delivery}
+
+📍 *Endereço:*
+${endereco}
+
+💳 *Pagamento:*
+${payment}
+
+🛒 *PEDIDO:*
+
+${lines}
+
+💰 *TOTAL:*
+${money(total)}
+
+📝 *Observações:*
+${obs || "Nenhuma"}
+
+Obrigado! 😊`;
+
+
+window.open(
+"https://wa.me/"
++
+WHATSAPP
++
+"?text="
++
+encodeURIComponent(msg),
+"_blank"
+);
+
+}
+
+
+renderProducts();
+
+updateCount();
+
+</script>
+
+</body>
+</html>
